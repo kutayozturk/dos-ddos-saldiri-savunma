@@ -1,4 +1,4 @@
-# DOS/DDOSY SALDIRILARI VE KORUNMA YÖNTEMLERİ
+# DOS/DDOS SALDIRILARI VE KORUNMA YÖNTEMLERİ
 
 ### Dos Nedir?
 DOS (Denial Of Service) sistemleri aksatmayı yada durdurmayı hedefleyen bir saldırı türüdür. Servis dışı bırakma saldırısı olarakda bilinir.
