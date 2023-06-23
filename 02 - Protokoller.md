@@ -35,3 +35,13 @@ Bilgisayarlar arasındaki iletişimin, küçük paketler halinde ve kayıpsız o
 İnternette kullanılan en yaygın protokoldür.
 
 Network ağlarında iletişimde kayıpsız veri gönderebilmek amacıyla yazılmıştır. HTTP, HTTPS, POP3, SSH, SMTP, Telnet, FTP gibi protokollerin veri iletimi TCP aracılığla yapılır.
+
+## TCP Bağlantısı Nasıl Çalışır?
+
+- X bilgisayuarı Y bilgisayarına bir SYN mesajı yollar.
+- Y bilgisayarı X bilgisayarının istediğini anladığına dair bir SYN+ACK mesajı yollar
+- X bilgisayarı Y bilgisayına ACK yollar.
+
+Yukarıda bahsedilen bu olata **Three Way Handshake** (üçlü El Sıkışma) adı verilir. 
+
+
