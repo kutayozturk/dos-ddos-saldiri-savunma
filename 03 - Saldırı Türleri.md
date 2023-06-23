@@ -1,6 +1,6 @@
 ![image](https://github.com/kutayozturk/dos-ddos-saldiri-savunma/assets/94574681/c25c9eab-c188-4be6-84b1-de850bd169c7)
 
-# Volumetrick Saldırılar
+# Volumetrik Saldırılar
 Saldırganlar tarafından en sık kullanılan atak çeşidi olup, sistem kaynaklarını tüketmeyi hedeflemektedir. 
 
 Sık karşılaşılan volumetrik saldırı çeşitleri
@@ -21,3 +21,10 @@ UDP flood saldırıalrının işleyiş biçimi temelde, hedef sistemin ratgele p
 - ICMP "Hedef Erişlemez" paketi ile cevap verir
 
   Bu döngü sonubnda çok sayıda UDP paketine, çok sayıda ICMP paketi ile karşılık vermek zorunda kalan hedef sistem sonunda erişilemez hale gelir.
+
+### UDP Flood Saldırılarına Karşı Alınabilecek Önlemler
+- Güçlü güvenlik duvarları kullanmak
+- Belirli IP adresinden gelecek istekleri sınırlandırmak
+- Timeout değerleri düşürülebilir
+- Timeout değeleri kullanılarak UDP Sessionları'nın hızlıca kapatılması s
+- Rate Limiting özelliği ile bir IP'den 500'den fazla istek geldiyse o IP adresini engellemek
