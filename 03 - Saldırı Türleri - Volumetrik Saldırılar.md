@@ -55,3 +55,17 @@ Amplifikasyon saldırıları "asimetriktir", yani saldırgan tarafından daha fa
 Bu saldırı türünde, kurbanın IP adresi ile DNS sunucularına sorgular gönderilir. Kurban gönderilen bu DNS sorgularının yanıtlarını alır.
 
 Nispeten az miktarda kaynak ve çaba ile bir saldırgan, hedef sitenin performansını önemli ölçüde azaltabilir, hatta tamamen kapanmasını sağlayacak miktarda DNS isteği gönderebilir.
+
+![image](https://github.com/kutayozturk/dos-ddos-saldiri-savunma/assets/94574681/2b7e6238-296c-40bf-9b9e-fd98e15d1179)
+
+Saldırgan, DNS çözümleyicisine göndereceği isteğin kaynak IP adresini hedef IP adresi olarak ayarlar.
+
+UDP paketleriyle yapılan isteklerin yanıtlarının büyük boyutlu olması için "ANY" argümanı gibi argümanları ileten DNS çözümleyicileri tespit edilir.
+
+Saldırgan, Botnet kullanarak hazırlanan UDP paketleri ile DNS çözümleyicilerine istekte bulunur.
+
+Gönderilen isteğe karşı DNS çözümleyicileri, hedefin IP adresine yanıt verir.
+
+Hedef, istek göndermediği DNS çözümleyicilerinden yanıt alır.
+
+Hedefin bulunduğu ağın alt yapısı gelen trafiğin yoğunluğu nedeniyle yavaşlayabilir ve hizmet reddi verebilir.
