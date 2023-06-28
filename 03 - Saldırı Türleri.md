@@ -89,3 +89,54 @@ Saldırgan, botnetleri kullanarak ve isteği UDP üzerinden gerçekleştirerek k
 Bağlantı oturum bilgisi (session) kullanan güvenlik Duvarı, yük dengeleme cihazları, yönlendiriciler vb. sistemler hedef alınır. çok sayıda oturum açma isteğinde bulunup, oturum tamamlanmadan yeni istekler gönderilir. Bu şekilde ağ ve güvenlik cihazlarının oturum tablolarını doldurup işlevsiz hale gelmesi sağlanır.
 
 En popüler protokol saldırılarına örnek olarak SYN/SYN-ACK/ACK Flood verilebilir.
+
+## SYN FLOOD Saldırıları
+
+İnternet dünyasının en fazla kullanılan DDOS saldırı tipidir.
+
+Mevcut sunucu kaynaklarını tüketerek meşru trafiğe kapatmayı amaçlayan önemli bir DDOS saldırısıdır.
+
+SYN paketlerini tekrar tekrar göndererek, hedef makinedeki tüm kullanılabilir bağlantı noktalarını doldurabilir ve hedeflenen aygıtın trafiğe yavaş bir şekilde yanıt vermesine veya hiç yanıt vermemesine neden olacaktır.
+
+![image](https://github.com/kutayozturk/dos-ddos-saldiri-savunma/assets/94574681/c7885015-6e73-4017-b3ff-706089e79570)
+
+- Saldırgan, hedeflenen sunucuya genellikle sahte IP adresleriyle çok yüksek hacimde SYN paketleri gönderir.
+- Sunucu daha sonra bağlantı isteklerinin her birine yanıt verir ve yanıtı almaya hazır bir açık bağlantı noktası bırakır.
+- Sunucu hiçbir zaman ulaşmayan son ACK paketini beklerken, saldırgan daha fazla SYN paketi göndermeye devam eder.
+- Her yeni SYN paketinin gelişi, sunucunun belirli bir süre için yeniden bir açık bir bağlantı noktasını geçici olarak sürdürmesine neden olur ve tüm kullanılabilir bağlantı noktaları tüketildikten sonra sunucu kilitlenmeye ve hizmet verememeye başlar.
+
+## Uygulama Katmanı Saldırıları
+
+Bu atak tipinde temel amaç yine kaynakları tüketmektir. Bu tip saldırılar web sayfalarının sunucuda üretildiği ve HTTP isteklerine yanıt olarak iletildiği 7. katman olan uygulama katmanını hedefler.
+
+7. katman seviyesinde yapılan saldırıların savunması zor olabilmektedir.
+
+Bunun nedeni de hangi trafiğin kötü niyetli olduğunu kestirmenin zorluğudur.
+
+Bu ataklarda bant genişliği düşüktür ve genellikle belli zafiyetlerden yararlanılarak yapılmaktadır. Örneğin Apache'de bulunan bir açık gibi.
+
+## HTTP Flood Saldırıları
+
+Sunucuya, sunucunun cevap verebileceğinden çok daha fazla, artarda gönderilen HTTP isteklerinden oluşan saldırı türüdür.
+
+Bu seviyedeki bir saldırı, ağı veya sunucuyu kaynaklarından devre dışı bırakmasıyla oluşur. Donanım artık yeterli kaynağa sahip olmadığında, istemciden gelen isteklere verilen yanıtlar daha fazla zaman gerektirir. Donanıma sayısız istek gönderilmeye devam ettiği için, sistemin sürekli olarak aşırı yüklenmesine neden olur ve sunucuya veya tüm ağa artık erişilemez.
+
+![image](https://github.com/kutayozturk/dos-ddos-saldiri-savunma/assets/94574681/18a89814-499b-4a94-9cbf-432da6da52c4)
+
+İstemcinin GET veya POST isteğine dayanır.
+
+Bir istemci bu isteklerden birini gönderdiğinde, sunucu isteği işler ve sonucu istemciye geri gönderir.
+
+GET isteği ile resimler ve metin blokları gibi statik içerik alınır. Dinamik kaynaklara erişim talep edilirse bir POST isteği kullanılır.GET yöntemi sunucudan veri alır ve POST yöntemi sunucuya veri gönderir.
+
+Saldırıda her iki yöntem de uygulanabilir, ancak POST yöntemi sunucu tarafından karmaşık işlemleri tetiklediği için daha sık kullanılır.
+
+## Slowloris Salıdrıları
+
+Slowloris saldırısı, HTTP isteğini hedef web sunucusuna çok yavaş göndererek bağlantı kaynaklarını tüketmeye çalışır.Birçok web sunucusu yazılımını hedefleyebilir, ancak Apache I.x ve 2.x'e karşı oldukça etkili olduğu kanıtlanmıştır.
+
+![image](https://github.com/kutayozturk/dos-ddos-saldiri-savunma/assets/94574681/8f7a53cb-6471-4257-84ae-cd77beedff21)
+
+Tasarım gereği, web sunucusu, HTTP isteğinin tümünün ulaşmasını veya zaman aşımına uğramasını beklemelidir.
+
+Saldırgan, sunucunun HTTP isteği zaman aşımı süresi dolmadan hemen önce HTTP gönderir. Bu bağlantıları mümkün olduğunca uzun süre açık tutmak içindir
