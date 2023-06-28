@@ -69,3 +69,23 @@ Gönderilen isteğe karşı DNS çözümleyicileri, hedefin IP adresine yanıt v
 Hedef, istek göndermediği DNS çözümleyicilerinden yanıt alır.
 
 Hedefin bulunduğu ağın alt yapısı gelen trafiğin yoğunluğu nedeniyle yavaşlayabilir ve hizmet reddi verebilir.
+
+## NTP Amplification Saldırıları
+NTP protokolü, internete bağlı olan makinelerin saatlerini senkronize etmek için kullanılır.
+
+Saldırganın public NTP (Network Tıme Protocol) sunucularını kullanarak hedef sistemin bant genişliğini, alabileceğinden fazla paket sayısına maruz bırakarak trafiğin yavaşlamasına, hatta sistemin servis dışı kalmasına neden olan saldırıdır.
+
+Saldırgan, botnetleri kullanarak ve isteği UDP üzerinden gerçekleştirerek kendisini güvene almaktadır. Çünkü UDP, TCP gibi "Üçlü El Sıkışma” yapmadan veri akışını sağlamaktadır. UDP'de, kimlik kontrolü ve veri filtrelenme olmadığı için paketler güvensiz ve hızlı bir şekilde iletilir.
+
+![image](https://github.com/kutayozturk/dos-ddos-saldiri-savunma/assets/94574681/c00d59cd-a44b-4e70-9fdd-4d9680c7a225)
+
+- Saldırgan, saldırının miktarını arttırmak ve kendisini gizlemek için botnet kullanır.
+- Botnet, sahte IP adresi içeren UDP paketlerini monlist komutunun aktif olduğu public NTP sunucularına gönderir. - Public NTP sunucularına gönderilen her UDP paketi, monlist komutunu kullanarak NTP sunucusuna istekte bulunur ve büyük bir yanıt alınır.
+- NTP sunucusu, yanıtları sahte IP adresi olarak belirtilen hedef sistemine gönderilir.
+- Hedef sistemin yanıt almasıyla ağ bant genişliği dolup ağ trafiği yavaşlar ve servis kesinti ile sonuçlanır.
+
+## Protokol Saldırıları
+
+Bağlantı oturum bilgisi (session) kullanan güvenlik Duvarı, yük dengeleme cihazları, yönlendiriciler vb. sistemler hedef alınır. çok sayıda oturum açma isteğinde bulunup, oturum tamamlanmadan yeni istekler gönderilir. Bu şekilde ağ ve güvenlik cihazlarının oturum tablolarını doldurup işlevsiz hale gelmesi sağlanır.
+
+En popüler protokol saldırılarına örnek olarak SYN/SYN-ACK/ACK Flood verilebilir.
