@@ -2,7 +2,7 @@
 Bilgisayar bilimleri açısından protokol bir ağ üzerindeki bilgisayarlar arasındaki iletișimi yöneten kurallar kümesidir.
 
 Protokoller yazılım, donanım veya her ikisi tarafindan uygulanmaktadır. Protokoller network cihazlarının nasıl anlaşacaklarını, veriyi nasıl ileteceklerini ve verilerinin alındıktan sonra nasıl okunacağı gibi süreçleri berlirlerler.
-Cihazların anlaşabilmesi için aynı dili konuşması gerekmektedir, protokoller bu noktada devreye girerler. Kısacası protokol aynı dili konuşmnak anlamına gelir.
+Cihazların anlaşabilmesi için aynı dili konuşması gerekmektedir, protokoller bu noktada devreye girerler. Kısacası protokol aynı dili konuşmak anlamına gelir.
 
 ## IP (Internet Protocol)
 IP, internet veya ağ üzerinden gönderilen verilerin formatını belirleyen bir dizi kuraldır.
