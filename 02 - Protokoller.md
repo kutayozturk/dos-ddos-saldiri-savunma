@@ -13,7 +13,7 @@ IPv4 32 bit boyutunda olup, noktalarla ayrılmış 4 adet 8 bitlik sayıları il
 Örneğin: 192.168.1.17
 
 ## DNS (Domain Name Server)
-Alan ADı Sunucusu, hangi alan adının hangi IP adresine karşılık geldiği bilgisini tutar ve kullnıcıları doğru adreslere yönlendirir.
+Alan Adı Sunucusu, hangi alan adının hangi IP adresine karşılık geldiği bilgisini tutar ve kullnıcıları doğru adreslere yönlendirir.
 
 DNS adresi aslında numaralardan oluşan IP adresine lapak takmak, isim vermek olarak düşünüebilir.
 
